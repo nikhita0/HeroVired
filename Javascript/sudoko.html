@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku Validator</title>
+    <style>
+       
+        table {
+            border-collapse: collapse;
+        }
+        td {
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            border: 1px solid black;
+            font-weight: bold;
+        }
+        .error {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sudoku Validator</h1>
+    <table>
+        
+        <tbody id="sudoku-grid">
+            
+        </tbody>
+    </table>
+    <br>
+    <button onclick="validateSudoku()">Validate Sudoku</button>
+    <p id="validation-result"></p>
+
+    <script>
+        
+        function validateSudoku() {
+           
+            const grid = document.getElementById("sudoku-grid");
+            const cells = grid.querySelectorAll("input");
+            const board = [];
+
+           
+            cells.forEach(cell => {
+                const value = cell.value.trim();
+                board.push(value);
+            });
+
+            
+            const hasDuplicates = arr => {
+                const seen = new Set();
+                for (const num of arr) {
+                    if (num !== '' && seen.has(num)) {
+                        return true;
+                    }
+                    seen.add(num);
+                }
+                return false;
+            };
+
+          
+            for (let i = 0; i < 9; i++) {
+                const row = board.slice(i * 9, i * 9 + 9);
+                if (hasDuplicates(row)) {
+                    setResult("Invalid Sudoku (Row " + (i + 1) + " has duplicates)");
+                    return;
+                }
+            }
+
+           
+            for (let j = 0; j < 9; j++) {
+                const column = [];
+                for (let i = 0; i < 9; i++) {
+                    column.push(board[i * 9 + j]);
+                }
+                if (hasDuplicates(column)) {
+                    setResult("Invalid Sudoku (Column " + (j + 1) + " has duplicates)");
+                    return;
+                }
+            }
+
+           
+            for (let box = 0; box < 9; box++) {
+                const subBox = [];
+                const startRow = Math.floor(box / 3) * 3;
+                const startCol = (box % 3) * 3;
+
+                for (let i = startRow; i < startRow + 3; i++) {
+                    for (let j = startCol; j < startCol + 3; j++) {
+                        subBox.push(board[i * 9 + j]);
+                    }
+                }
+
+                if (hasDuplicates(subBox)) {
+                    setResult("Invalid Sudoku (Sub-box " + (box + 1) + " has duplicates)");
+                    return;
+                }
+            }
+
+            
+            setResult("Valid Sudoku!");
+        }
+
+        
+        function setResult(message) {
+            const resultElement = document.getElementById("validation-result");
+            resultElement.textContent = message;
+        }
+
+        
+        const grid = document.getElementById("sudoku-grid");
+        for (let i = 0; i < 9; i++) {
+            const row = document.createElement("tr");
+            for (let j = 0; j < 9; j++) {
+                const cell = document.createElement("td");
+                const input = document.createElement("input");
+                input.type = "text";
+                input.maxLength = 1;
+                cell.appendChild(input);
+                row.appendChild(cell);
+            }
+            grid.appendChild(row);
+        }
+    </script>
+</body>
+</html>
