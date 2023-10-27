@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 100px;
+    }
+
+    .countdown {
+        font-size: 48px;
+        color: #ff3333;
+        animation: countdown 5s steps(5) 1;
+    }
+
+    @keyframes countdown {
+        0%, 100% {
+            content: '5';
+        }
+        20% {
+            content: '4';
+        }
+        40% {
+            content: '3';
+        }
+        60% {
+            content: '2';
+        }
+        80% {
+            content: '1';
+        }
+    }
+
+    button {
+        margin-top: 20px;
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    button:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="countdown">
+        <div id="countdown-text">5</div>
+    </div>
+    <button id="replay-btn" disabled>Replay</button>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const countdownText = document.getElementById('countdown-text');
+    const replayBtn = document.getElementById('replay-btn');
+    let countdown = 5;
+
+    const countdownInterval = setInterval(function() {
+        countdown--;
+        if (countdown > 0) {
+            countdownText.textContent = countdown;
+        } else {
+            clearInterval(countdownInterval);
+            countdownText.textContent = 'Go';
+            replayBtn.removeAttribute('disabled');
+        }
+    }, 1000);
+
+    replayBtn.addEventListener('click', function() {
+        countdown = 5;
+        countdownText.textContent = '5';
+        replayBtn.setAttribute('disabled', true);
+
+        const replayInterval = setInterval(function() {
+            countdown--;
+            if (countdown > 0) {
+                countdownText.textContent = countdown;
+            } else {
+                clearInterval(replayInterval);
+                countdownText.textContent = 'Go';
+                replayBtn.removeAttribute('disabled');
+            }
+        }, 1000);
+    });
+});
+
+    </script>
+</body>
+</html>
