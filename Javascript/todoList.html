@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <style>
+    .todo-app {
+        width: 300px;
+        margin: 0 auto;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #f4f4f4;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+        color: #333;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+
+    #task-input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        color: #333;
+    }
+
+    #task-list {
+        list-style: none;
+        padding: 0;
+    }
+    li {
+        background-color: #fff;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin: 5px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .completed {
+        background-color: #e6e6e6;
+        text-decoration: line-through;
+        color: #999;
+    }
+   </style>
+</head>
+<body>
+    <div class="todo-app">
+        <h1>To-Do List</h1>
+        <input type="text" id="task-input" placeholder="Add a new task">
+        <ul id="task-list">
+           
+        </ul>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        const taskInput = document.getElementById('task-input');
+        const taskList = document.getElementById('task-list');
+
+        taskInput.addEventListener('keyup', function(event) {
+            if (event.key === 'Enter' && taskInput.value.trim() !== '') {
+                addTask(taskInput.value.trim());
+                taskInput.value = '';
+            }
+        });
+
+        function addTask(taskText) {
+            const taskItem = document.createElement('li');
+            taskItem.innerHTML = `
+                <span>${taskText}</span>
+                <button onclick="editTask(this)">Edit</button>
+                <button onclick="completeTask(this)">Complete</button>
+                <button onclick="deleteTask(this)">Delete</button>
+            `;
+            taskList.appendChild(taskItem);
+        }
+    });
+    function editTask(button) {
+        const taskItem = button.parentNode;
+        const taskText = taskItem.querySelector('span').textContent;
+        const newTaskText = prompt('Edit task:', taskText);
+        if (newTaskText !== null) {
+            taskItem.querySelector('span').textContent = newTaskText;
+        }
+    }
+    function completeTask(button) {
+        const taskItem = button.parentNode;
+        taskItem.classList.toggle('completed');
+    }
+
+    function deleteTask(button) {
+        const taskItem = button.parentNode;
+        taskItem.remove();
+    }
+
+    function completeTask(button) {
+        const taskItem = button.parentNode;
+        taskItem.classList.add('completed');
+        // Remove the "Complete" button
+        taskItem.querySelector('button:nth-child(2)').remove();
+        
+        // Add a "Delete" button for completed tasks
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.onclick = function() {
+            taskItem.remove();
+        };
+        taskItem.appendChild(deleteButton);
+    }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .calculator {
+        width: 300px;
+        margin: 0 auto;
+        padding: 10px;
+        border: 1px solid #ccc;
+    }
+
+    #display {
+        width: 100%;
+        height: 40px;
+        font-size: 24px;
+    }
+
+    button {
+        width: 60px;
+        height: 60px;
+        font-size: 18px;
+        margin: 5px;
+    }
+
+    .number {
+        background-color: #f2f2f2;
+    }
+
+    .operator {
+        background-color: #ff9900;
+    }
+
+    .decimal {
+        background-color: #f2f2f2;
+        color: #ff9900;
+    }
+
+    .equals {
+        background-color: #ffcc00;
+    }
+
+    .clear {
+        background-color: #ff3333;
+    }
+
+    button:hover {
+        background-color: #ccc;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="display" readonly>
+        <div class="buttons">
+            <button class="number" onclick="appendToDisplay('7')">7</button>
+            <button class="number" onclick="appendToDisplay('8')">8</button>
+            <button class="number" onclick="appendToDisplay('9')">9</button>
+            <button class="operator" onclick="appendToDisplay('+')">+</button>
+            <button class="number" onclick="appendToDisplay('4')">4</button>
+            <button class="number" onclick="appendToDisplay('5')">5</button>
+            <button class="number" onclick="appendToDisplay('6')">6</button>
+            <button class="operator" onclick="appendToDisplay('-')">-</button>
+            <button class="number" onclick="appendToDisplay('1')">1</button>
+            <button class="number" onclick="appendToDisplay('2')">2</button>
+            <button class="number" onclick="appendToDisplay('3')">3</button>
+            <button class="operator" onclick="appendToDisplay('*')">*</button>
+            <button class="number" onclick="appendToDisplay('0')">0</button>
+            <button class="decimal" onclick="appendToDisplay('.')">.</button>
+            <button class="operator" onclick="appendToDisplay('/')">/</button>
+            <button class="equals" onclick="calculateResult()">=</button>
+            <button class="clear" onclick="clearDisplay()">C</button>
+        </div>
+    </div>
+    <script>
+        let currentInput = ''; // Stores the current user input
+
+function appendToDisplay(value) {
+    currentInput += value;
+    document.getElementById('display').value = currentInput;
+}
+
+function calculateResult() {
+    try {
+        currentInput = currentInput.replace(',', '.'); // Replace comma with a decimal point
+        const result = eval(currentInput); // Evaluate the user input
+        document.getElementById('display').value = result;
+        currentInput = result.toString();
+    } catch (error) {
+        document.getElementById('display').value = 'Error';
+        currentInput = '';
+    }
+}
+
+function clearDisplay() {
+    currentInput = '';
+    document.getElementById('display').value = '';
+}
+
+    </script>
+</body>
+</html>
