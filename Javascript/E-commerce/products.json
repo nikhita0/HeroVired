@@ -1,0 +1,214 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "Name": "Elegant blue Gown",
+            "Description": "Beautiful blue gown for special occasions",
+            "Price": 150,
+            "Image": "product1.jpg"
+        },
+        {
+            "id": 2,
+            "Name": "Summer Floral Dress",
+            "Description": "Light and stylish floral dress for summer",
+            "Price": 60,
+            "Image": "summer_floral_dress.jpg"
+        },
+        {
+            "id": 3,
+            "Name": "Casual Maxi Dress",
+            "Description": "Comfortable and chic maxi dress",
+            "Price": 45,
+            "Image": "casual_maxi_dress.jpg"
+        },
+        {
+            "id": 4,
+            "Name": "Black Evening Dress",
+            "Description": "Stunning black evening dress with sequins",
+            "Price": 200,
+            "Image": "black_evening_dress.jpg"
+        },
+        {
+            "id": 5,
+            "Name": "Boho Chic Sundress",
+            "Description": "Bohemian-style sundress for a relaxed look",
+            "Price": 35,
+            "Image": "boho_chic_sundress.jpg"
+        },
+        {
+            "id": 6,
+            "Name": "Formal Cocktail Dress",
+            "Description": "Elegant cocktail dress for formal events",
+            "Price": 120,
+            "Image": "formal_cocktail_dress.jpg"
+        },
+        {
+            "id": 7,
+            "Name": "Printed Midi Dress",
+            "Description": "Trendy printed midi dress with a belt",
+            "Price": 55,
+            "Image": "printed_midi_dress.jpg"
+        },
+        {
+            "id": 8,
+            "Name": "Lace Wedding Gown",
+            "Description": "Exquisite lace wedding gown for brides",
+            "Price": 300,
+            "Image": "lace_wedding_gown.jpg"
+        },
+        {
+            "id": 9,
+            "Name": "Striped Summer Dress",
+            "Description": "Striped summer dress for a playful style",
+            "Price": 40,
+            "Image": "stripped_summer_dress.jpg"
+        },
+        {
+            "id": 10,
+            "Name": "Classic White Shirt",
+            "Description": "Timeless white shirt for versatile outfits",
+            "Price": 25,
+            "Image": "classic_white_shirt.jpg"
+        },
+        {
+            "id": 11,
+            "Name": "Denim Jeans",
+            "Description": "Stylish denim jeans for everyday wear",
+            "Price": 50,
+            "Image": "denim_jeans.jpg"
+        },
+        {
+            "id": 12,
+            "Name": "Leather Jacket",
+            "Description": "Classic leather jacket for a rugged look",
+            "Price": 80,
+            "Image": "leather_jacket.jpg"
+        },
+        {
+            "id": 13,
+            "Name": "Comfort Sneakers",
+            "Description": "Comfortable sneakers for active days",
+            "Price": 30,
+            "Image": "comfort_sneakers.jpg"
+        },
+        {
+            "id": 14,
+            "Name": "Canvas Backpack",
+            "Description": "Durable canvas backpack for on-the-go storage",
+            "Price": 40,
+            "Image": "canvas_backpack.jpg"
+        },
+        {
+            "id": 15,
+            "Name": "Straw Hat",
+            "Description": "Stylish straw hat for sun protection",
+            "Price": 15,
+            "Image": "straw_hat.jpg"
+        },
+        {
+            "id": 16,
+            "Name": "Leather Boots",
+            "Description": "Fashionable leather boots for all seasons",
+            "Price": 70,
+            "Image": "leather_boots.jpg"
+        },
+        {
+            "id": 17,
+            "Name": "Summer Sandals",
+            "Description": "Casual summer sandals for warm days",
+            "Price": 20,
+            "Image": "summer_sandals.jpg"
+        },
+        {
+            "id": 18,
+            "Name": "Silk Scarf",
+            "Description": "Luxurious silk scarf to complete your look",
+            "Price": 35,
+            "Image": "silk_scarf.jpg"
+        },
+        {
+            "id": 19,
+            "Name": "Cozy Cardigan",
+            "Description": "Cozy cardigan for cool evenings",
+            "Price": 45,
+            "Image": "cozy_cardigan.jpg"
+        },
+        {
+            "id": 20,
+            "Name": "Running Shoes",
+            "Description": "Performance running shoes for workouts",
+            "Price": 60,
+            "Image": "running_shoes.jpg"
+        },
+        {
+            "id": 21,
+            "Name": "Fancy Earrings",
+            "Description": "Elegant earrings for special occasions",
+            "Price": 18,
+            "Image": "fancy_earrings.jpg"
+        },
+        {
+            "id": 22,
+            "Name": "Trendy Sunglasses",
+            "Description": "Stylish sunglasses for a fashionable look",
+            "Price": 25,
+            "Image": "trendy_sunglasses.jpg"
+        },
+        {
+            "id": 23,
+            "Name": "Professional Watch",
+            "Description": "High-quality watch for a professional appearance",
+            "Price": 120,
+            "Image": "professional_watch.jpg"
+        },
+        {
+            "id": 24,
+            "Name": "Denim Skirt",
+            "Description": "Denim skirt for a trendy and casual style",
+            "Price": 30,
+            "Image": "denim_skirt.jpg"
+        },
+        {
+            "id": 25,
+            "Name": "Knit Sweater",
+            "Description": "Warm and soft knit sweater for cold weather",
+            "Price": 40,
+            "Image": "knit_sweater.jpg"
+        },
+        {
+            "id": 26,
+            "Name": "Hiking Boots",
+            "Description": "Durable hiking boots for outdoor adventures",
+            "Price": 70,
+            "Image": "hiking_shoes.jpg"
+        },
+        {
+            "id": 27,
+            "Name": "Tote Bag",
+            "Description": "Spacious tote bag for carrying your essentials",
+            "Price": 25,
+            "Image": "tote_bag.jpg"
+        },
+        {
+            "id": 28,
+            "Name": "Pendant Necklace",
+            "Description": "Charming pendant necklace for everyday wear",
+            "Price": 15,
+            "Image": "pendant_necklace.jpg"
+        },
+        {
+            "id": 29,
+            "Name": "Linen Blouse",
+            "Description": "Airy linen blouse for a comfortable summer",
+            "Price": 35,
+            "Image": "lined_blouse.jpg"
+        },
+        {
+            "id": 30,
+            "Name": "Classic Trench Coat",
+            "Description": "Timeless trench coat for a polished look",
+            "Price": 90,
+            "Image": "classic_trench_coat.jpg"
+        }
+    ]
+}
